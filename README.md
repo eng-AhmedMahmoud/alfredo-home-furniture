@@ -29,8 +29,11 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Hosting
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Static export (`output: "export"` in `next.config.ts`) on Cloudflare Pages: https://alfredo-home-furniture.pages.dev
+(Pages project `alfredo-home-furniture`). The old Vercel URL redirects there.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `bash scripts/ci-local.sh`: the merge gate (clean install, lint, build).
+- `bash scripts/deploy-pages.sh`: production deploy from a clean `main` (needs a wrangler login on the Cloudflare account).
+- Node 24 (`.nvmrc`), pnpm 10 (`packageManager` in `package.json`).
